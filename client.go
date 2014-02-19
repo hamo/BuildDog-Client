@@ -64,7 +64,11 @@ func main() {
 			panic("args")
 		}
 		cmdBuild([]string{os.Args[2], os.Args[3]})
-
+	case "task":
+		if len(os.Args) != 3 {
+			panic("args")
+		}
+		cmdTask([]string{os.Args[2]})
 	default:
 		panic("arg ERROR")
 	}
