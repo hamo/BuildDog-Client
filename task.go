@@ -71,7 +71,7 @@ func cmdTaskOutput(taskId string) error {
 		return err
 	}
 
-	if resp.Status == 200 {
+	if resp.StatusCode == 200 {
 		fmt.Print(body)
 	}
 
