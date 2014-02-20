@@ -35,7 +35,7 @@ func cmdBuild(args []string) error {
 	if err != nil {
 		return nil
 	}
-	fmt.Print(body)
+	fmt.Println(string(body))
 
 	return nil
 }

@@ -47,8 +47,9 @@ func cmdTask(args []string) error {
 		if resp.StatusCode == 200 {
 			dec := json.NewDecoder(strings.NewReader(string(body)))
 			dec.Decode(&ts)
-			fmt.Printf("%+v", ts)
+			fmt.Printf("%+v\n", ts)
 		}
+		return nil
 	}
 
 	switch args[1] {
@@ -72,7 +73,7 @@ func cmdTaskOutput(taskId string) error {
 	}
 
 	if resp.StatusCode == 200 {
-		fmt.Print(body)
+		fmt.Println(string(body))
 	}
 
 	return nil
