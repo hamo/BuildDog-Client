@@ -60,15 +60,9 @@ func main() {
 
 	switch os.Args[1] {
 	case "build":
-		if len(os.Args) != 4 {
-			panic("args")
-		}
-		cmdBuild([]string{os.Args[2], os.Args[3]})
+		cmdBuild(os.Args[2:])
 	case "task":
-		if len(os.Args) != 3 {
-			panic("args")
-		}
-		cmdTask([]string{os.Args[2]})
+		cmdTask(os.Args[2:])
 	default:
 		panic("arg ERROR")
 	}
