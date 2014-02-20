@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"strings"
 )
 
@@ -28,6 +29,12 @@ func cmdBuild(args []string) error {
 	form["rev"] = rev
 
 	resp, _ := request("POST", servAddr+buildAPI, form, "")
+	defer resp.Body.Close()
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return nil
+	}
+	fmt.Print(body)
 
 	return nil
 }
