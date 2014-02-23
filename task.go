@@ -12,6 +12,7 @@ const (
 )
 
 type taskStatus struct {
+	ID      uint64
 	Creator string
 
 	Repo string
