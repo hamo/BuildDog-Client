@@ -38,7 +38,7 @@ func updateConf(c confStruct, f string) error {
 	}
 	defer file.Close()
 
-	fmt.Fprintf(file, "version=%d\n", confVersion)
+	fmt.Fprintf(file, "version=%s\n", confVersion)
 	fmt.Fprintf(file, "username=%s\n", c.username)
 	return nil
 }
